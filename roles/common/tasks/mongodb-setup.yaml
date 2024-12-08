@@ -19,7 +19,7 @@
     when: component == "user"  
   - name: print the count
     ansible.builtin.debug:
-      msg: "product count: {{product_count}}"
+      msg: "product count: {{entries_count}}"
 
   - name: "load {{component}} data"
     ansible.builtin.shell: "mongo --host 172.31.87.136 < /app/schema/{{component}}.js"
