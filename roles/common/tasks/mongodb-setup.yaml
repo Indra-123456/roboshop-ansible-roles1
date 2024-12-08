@@ -23,11 +23,11 @@
   #   ansible.builtin.debug:
   #     msg: "entries count: {{entries_count}}"
 
-  - name: "load {{component}} data"
+  - name: "load catalogue data"
     ansible.builtin.shell: "mongo --host 172.31.87.136 < /app/schema/{{component}}.js"
     when: products_count.stdout == "0" and component == "catalogue" # keep double quotes
 
-  - name: "load {{component}} data"
+  - name: "load user data"
     ansible.builtin.shell: "mongo --host 172.31.87.136 < /app/schema/{{component}}.js"
     when: users_count.stdout == "0" and component == "user" # keep double quotes  
 
