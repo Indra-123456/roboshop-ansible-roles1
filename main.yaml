@@ -1,5 +1,5 @@
 - name: "install {{component}}"
-  hosts: mongodb
+  hosts: "{{component}}"
   become: yes
   roles:
   - "{{component}}"
