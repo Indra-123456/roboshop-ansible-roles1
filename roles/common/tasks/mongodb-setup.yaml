@@ -23,6 +23,6 @@
 
   - name: "load {{component}} data"
     ansible.builtin.shell: "mongo --host 172.31.87.136 < /app/schema/{{component}}.js"
-    when: entries_count.stdout == "0" # keep double quotes
+    when: entries_count is defined and entries_count.stdout == "0" # keep double quotes
 
   
